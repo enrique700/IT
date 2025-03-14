@@ -10,3 +10,8 @@ net stop stisvc && net start stisvc     <-- Reinicia servicio de scaneo e imagen
 
 
 net stop DeviceAssociationService && net start DeviceAssociationService   <-- Reiniciar aplicacion de 3ro scan
+
+
+
+
+https://app.mediafire.com/rw1ez1m0i74hx   <-- link con carpeta de mediafire con archivos escenciales 
