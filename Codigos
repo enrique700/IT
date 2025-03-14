@@ -1,0 +1,12 @@
+winget upgrade --all      <-- Comando para actualizar todas las app de windows 
+
+iwr -useb https://christitus.com/win | iex  <-- comando para instalar por paquetes 
+
+net user Usuario CRD /add       <-- Crear un usuario local en windows con contraseña "CRD" 
+
+net localgroup Users Usuario /add  <-- continua lo de arriba y lo agrega al grupo local, siempre falla w11 
+
+net stop stisvc && net start stisvc     <-- Reinicia servicio de scaneo e imagen win , asi como spooler el de impr
+
+
+net stop DeviceAssociationService && net start DeviceAssociationService   <-- Reiniciar aplicacion de 3ro scan
