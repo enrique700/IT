@@ -11,7 +11,6 @@ https://app.mediafire.com/rw1ez1m0i74hx   <-- link con carpeta de mediafire con 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 net stop spooler && net start spooler <--- detiene y abre el servicio de cola de impresion 
 
 net stop stisvc && net start stisvc     <-- Reinicia servicio de scaneo e imagen win , asi como spooler el de impr
@@ -19,3 +18,18 @@ net stop stisvc && net start stisvc     <-- Reinicia servicio de scaneo e imagen
 net stop DeviceAssociationService && net start DeviceAssociationService   <-- Reiniciar aplicacion de 3ro scan
 
 net stop spooler && del %systemroot%\System32\spool\printers\* /Q /F /S  && net start spooler    <-- Reiniciar cola de impresion y eliminar rastros 
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+sfc /scannow       <--- Revision y reparacion de archivos corruptos de windows 
+
+
+Ejecutar estos comandos en orden para revision de estabilidad de windows , se deben ejecutar en el mismo orden en el que estan 
+
+DISM /Online /Cleanup-Image /CheckHealth      
+
+DISM /Online /Cleanup-Image /ScanHealth
+
+DISM /Online /Cleanup-Image /RestoreHealth
