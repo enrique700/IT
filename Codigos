@@ -4,16 +4,18 @@ iwr -useb https://christitus.com/win | iex  <-- comando para instalar por paquet
 
 net user Usuario CRD /add       <-- Crear un usuario local en windows con contraseña "CRD" 
 
-net localgroup Users Usuario /add  <-- continua lo de arriba y lo agrega al grupo local, siempre falla w11 
+https://app.mediafire.com/rw1ez1m0i74hx   <-- link con carpeta de mediafire con archivos escenciales 
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+net stop spooler && net start spooler <--- detiene y abre el servicio de cola de impresion 
 
 net stop stisvc && net start stisvc     <-- Reinicia servicio de scaneo e imagen win , asi como spooler el de impr
 
-
 net stop DeviceAssociationService && net start DeviceAssociationService   <-- Reiniciar aplicacion de 3ro scan
 
-
 net stop spooler && del %systemroot%\System32\spool\printers\* /Q /F /S  && net start spooler    <-- Reiniciar cola de impresion y eliminar rastros 
-
-https://www.youtube.com/watch?v=At-TbodxLDg
-
-https://app.mediafire.com/rw1ez1m0i74hx   <-- link con carpeta de mediafire con archivos escenciales 
