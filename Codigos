@@ -4,7 +4,7 @@ iwr -useb https://christitus.com/win | iex  <-- comando para instalar por paquet
 
 net user Usuario CRD /add       <-- Crear un usuario local en windows con contraseña "CRD" 
 
-https://app.mediafire.com/rw1ez1m0i74hx   <-- link con carpeta de mediafire con archivos escenciales 
+https://www.mediafire.com/folder/rw1ez1m0i74hx/Prog   <-- link con carpeta de mediafire con archivos escenciales 
 
 
 
