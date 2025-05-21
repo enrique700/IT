@@ -51,3 +51,4 @@ Internet, ya sea apagando el Wi-Fi del ordenador, o quitando el cable del PC. Un
 Comandos uttiles durante la configuracion de windows 11 
 shift + f10 ( para abrir cmd ) 
 ipconfig /release ( para desactivar los adaptadores de red ) 
+oobe/bypassnro  <-- para reiniciar la configuracion ( no me sirvio para saltar la cuenta pero al menos para reiniciar si me equivoque en algo) 
