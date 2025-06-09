@@ -52,3 +52,18 @@ Comandos uttiles durante la configuracion de windows 11
 shift + f10 ( para abrir cmd ) 
 ipconfig /release ( para desactivar los adaptadores de red ) 
 oobe/bypassnro  <-- para reiniciar la configuracion ( no me sirvio para saltar la cuenta pero al menos para reiniciar si me equivoque en algo) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Activacion de Windows y Office 
+
+
+https://massgrave.dev/
+
+1-Abra PowerShell (no CMD). Para ello, haga clic derecho en el menú de inicio de Windows y seleccione PowerShell o Terminal.
+
+2-Copie y pegue el código a continuación y presione enter
+
+irm https://get.activated.win | iex
+
+3-Verá las opciones de activación. Elija [1] HWID para la activación de Windows. Elija [2] Ohook para la activación de Office.
+
+4-Eso es todo
