@@ -67,3 +67,12 @@ irm https://get.activated.win | iex
 3-Verá las opciones de activación. Elija [1] HWID para la activación de Windows. Elija [2] Ohook para la activación de Office.
 
 4-Eso es todo
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Forzar un solo idioma de teclado instalado en windows ( para evitar tener 2 distribuciones de teclado ) 
+
+1- Abrir CMD como admin y pegar el siguiente codigo 
+
+2- Set-WinUserLanguageList en-US -Force
+
+3- Listo, cerrar y abrir sesion en windows 
