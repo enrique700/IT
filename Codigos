@@ -1,3 +1,5 @@
+*Comandos utiles para instalar aplicaciones por grupos con winget 
+
 winget upgrade --all      <-- Comando para actualizar todas las app de windows 
 
 iwr -useb https://christitus.com/win | iex  <-- comando para instalar por paquetes 
@@ -6,54 +8,8 @@ net user Usuario CRD /add       <-- Crear un usuario local en windows con contra
 
 https://www.mediafire.com/folder/rw1ez1m0i74hx/Prog   <-- link con carpeta de mediafire con archivos escenciales 
 
-
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-net stop spooler && net start spooler <--- detiene y abre el servicio de cola de impresion 
-
-net stop stisvc && net start stisvc     <-- Reinicia servicio de scaneo e imagen win , asi como spooler el de impr
-
-net stop DeviceAssociationService && net start DeviceAssociationService   <-- Reiniciar aplicacion de 3ro scan
-
-net stop spooler && del %systemroot%\System32\spool\printers\* /Q /F /S  && net start spooler    <-- Reiniciar cola de impresion y eliminar rastros 
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-sfc /scannow       <--- Revision y reparacion de archivos corruptos de windows 
-
-
-Ejecutar estos comandos en orden para revision de estabilidad de windows , se deben ejecutar en el mismo orden en el que estan 
-
-DISM /Online /Cleanup-Image /CheckHealth      
-
-DISM /Online /Cleanup-Image /ScanHealth
-
-DISM /Online /Cleanup-Image /RestoreHealth
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /f    <-- Limpiar historial de "Ejecutar" 
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Saltar cuenta Windows 11 
-
-Si queremos continuar sin usar una Cuenta Microsoft, lo primero que debemos hacer es hacer clic sobre «Iniciar sesión con una llave 
-de seguridad«, y, una vez veamos la nueva pantalla de configuración, volveremos atrás, a la pantalla de iniciar sesión. Ahora, desconectamos 
-Internet, ya sea apagando el Wi-Fi del ordenador, o quitando el cable del PC. Una vez desconectado el cable haremos clic de nuevo sobre 
-«Iniciar sesión con una llave de seguridad» y veremos cómo, por arte de magia, ahora Windows 11 Home nos permite crear una cuenta sin conexión.
-
------------------------------
-Comandos uttiles durante la configuracion de windows 11 
-shift + f10 ( para abrir cmd ) 
-ipconfig /release ( para desactivar los adaptadores de red ) 
-oobe/bypassnro  <-- para reiniciar la configuracion ( no me sirvio para saltar la cuenta pero al menos para reiniciar si me equivoque en algo) 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Activacion de Windows y Office 
+*Activacion de Windows y Office 
 
 
 https://massgrave.dev/
@@ -68,8 +24,52 @@ irm https://get.activated.win | iex
 
 4-Eso es todo
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Reparacion de cola de impresion y servicio de escaner de windows 
+
+net stop spooler && net start spooler <--- detiene y abre el servicio de cola de impresion 
+
+net stop stisvc && net start stisvc     <-- Reinicia servicio de scaneo e imagen win , asi como spooler el de impr
+
+net stop DeviceAssociationService && net start DeviceAssociationService   <-- Reiniciar aplicacion de 3ro scan
+
+net stop spooler && del %systemroot%\System32\spool\printers\* /Q /F /S  && net start spooler    <-- Reiniciar cola de impresion y eliminar rastros 
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Comandos para reparar y revisar estabilidad de windows 
+
+sfc /scannow       <--- Revision y reparacion de archivos corruptos de windows 
+
+Ejecutar estos comandos en orden para revision de estabilidad de windows , se deben ejecutar en el mismo orden en el que estan 
+
+DISM /Online /Cleanup-Image /CheckHealth      
+
+DISM /Online /Cleanup-Image /ScanHealth
+
+DISM /Online /Cleanup-Image /RestoreHealth
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Forzar un solo idioma de teclado instalado en windows ( para evitar tener 2 distribuciones de teclado ) 
+*Limpiar historial de "Ejecutar" 
+
+reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /f    
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Saltar cuenta Windows 11 
+
+Si queremos continuar sin usar una Cuenta Microsoft, lo primero que debemos hacer es hacer clic sobre «Iniciar sesión con una llave 
+de seguridad«, y, una vez veamos la nueva pantalla de configuración, volveremos atrás, a la pantalla de iniciar sesión. Ahora, desconectamos 
+Internet, ya sea apagando el Wi-Fi del ordenador, o quitando el cable del PC. Una vez desconectado el cable haremos clic de nuevo sobre 
+«Iniciar sesión con una llave de seguridad» y veremos cómo, por arte de magia, ahora Windows 11 Home nos permite crear una cuenta sin conexión.
+
+-----------------------------
+Comandos uttiles durante la configuracion de windows 11 
+shift + f10 ( para abrir cmd ) 
+ipconfig /release ( para desactivar los adaptadores de red ) 
+oobe/bypassnro  <-- para reiniciar la configuracion ( no me sirvio para saltar la cuenta pero al menos para reiniciar si me equivoque en algo) 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Forzar un solo idioma de teclado instalado en windows ( para evitar tener 2 distribuciones de teclado ) 
 
 1- Abrir CMD como admin y pegar el siguiente codigo 
 
