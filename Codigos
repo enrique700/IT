@@ -78,3 +78,12 @@ oobe/bypassnro  <-- para reiniciar la configuracion ( no me sirvio para saltar l
 2- Set-WinUserLanguageList en-US -Force
 
 3- Listo, cerrar y abrir sesion en windows 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Quitar expiracion de contraseña a usuarios en windows 
+
+Abre una consola de PowerShell como administrador.
+
+# Sustituye "usuario" por el nombre de la cuenta
+
+Set-LocalUser -Name "usuario" -PasswordNeverExpires $true
