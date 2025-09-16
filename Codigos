@@ -24,8 +24,6 @@ irm https://get.activated.win | iex
 
 3-Verá las opciones de activación. Elija [1] HWID para la activación de Windows. Elija [2] Ohook para la activación de Office.
 
-4-Eso es todo
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Reparacion de cola de impresion y servicio de escaner de windows 
 
@@ -57,20 +55,6 @@ DISM /Online /Cleanup-Image /RestoreHealth
 reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /f    
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*Saltar cuenta Windows 11 
-
-Si queremos continuar sin usar una Cuenta Microsoft, lo primero que debemos hacer es hacer clic sobre «Iniciar sesión con una llave 
-de seguridad«, y, una vez veamos la nueva pantalla de configuración, volveremos atrás, a la pantalla de iniciar sesión. Ahora, desconectamos 
-Internet, ya sea apagando el Wi-Fi del ordenador, o quitando el cable del PC. Una vez desconectado el cable haremos clic de nuevo sobre 
-«Iniciar sesión con una llave de seguridad» y veremos cómo, por arte de magia, ahora Windows 11 Home nos permite crear una cuenta sin conexión.
-
------------------------------
-Comandos uttiles durante la configuracion de windows 11 
-shift + f10 ( para abrir cmd ) 
-ipconfig /release ( para desactivar los adaptadores de red ) 
-oobe/bypassnro  <-- para reiniciar la configuracion ( no me sirvio para saltar la cuenta pero al menos para reiniciar si me equivoque en algo) 
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Forzar un solo idioma de teclado instalado en windows ( para evitar tener 2 distribuciones de teclado ) 
 
 1- Abrir CMD como admin y pegar el siguiente codigo 
@@ -80,10 +64,19 @@ oobe/bypassnro  <-- para reiniciar la configuracion ( no me sirvio para saltar l
 3- Listo, cerrar y abrir sesion en windows 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Quitar expiracion de contraseña a usuarios en windows 
+*Quitar expiracion de contraseña a usuarios en windows 
 
 Abre una consola de PowerShell como administrador.
 
 # Sustituye "usuario" por el nombre de la cuenta
 
 Set-LocalUser -Name "usuario" -PasswordNeverExpires $true
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Comando para eliminar programas innecesarios win10-Win11 
+Este comando ayuda con la optimizacion quitando cosas que usualmente no se usan
+
+Se ejecuta este comando con powershell con administrator 
+
+& ([scriptblock]::Create((irm "https://debloat.raphi.re/"))) 
+
+Para mas detalles: https://github.com/Raphire/Win11Debloat   
