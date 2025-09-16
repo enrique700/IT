@@ -72,7 +72,7 @@ Abre una consola de PowerShell como administrador.
 
 Set-LocalUser -Name "usuario" -PasswordNeverExpires $true
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*Comando para eliminar programas innecesarios win10-Win11 
+*Comando para eliminar programas innecesarios win10-Win11 (OJO ESTO ESTA BAJO PRUEBAS) 
 Este comando ayuda con la optimizacion quitando cosas que usualmente no se usan
 
 Se ejecuta este comando con powershell con administrator 
