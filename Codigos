@@ -7,6 +7,19 @@ iwr -useb https://christitus.com/win | iex  <-- comando para instalar por paquet
 net user Usuario CRD /add       <-- Crear un usuario local en windows con contraseña "CRD" 
 
 https://www.mediafire.com/folder/rw1ez1m0i74hx/Prog   <-- link con carpeta de mediafire con archivos escenciales 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Instalacion de Winget si windows aun no lo tiene
+
+Pegamos el siguiente parrafo en un powershell como administrador 
+
+$progressPreference = 'silentlyContinue'
+Write-Host "Installing WinGet PowerShell module from PSGallery..."
+Install-PackageProvider -Name NuGet -Force | Out-Null
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
+Write-Host "Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet..."
+Repair-WinGetPackageManager -AllUsers
+Write-Host "Done."
+
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Activacion de Windows y Office 
