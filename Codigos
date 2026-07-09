@@ -1,4 +1,4 @@
-*Comandos utiles para instalar aplicaciones por grupos con winget 
+**Comandos utiles para instalar aplicaciones por grupos con winget**
 
 winget upgrade --all      <-- Comando para actualizar todas las app de windows 
 
@@ -93,6 +93,7 @@ Se ejecuta este comando con powershell con administrator
 & ([scriptblock]::Create((irm "https://debloat.raphi.re/"))) 
 
 Para mas detalles: https://github.com/Raphire/Win11Debloat   
+<<<<<<< HEAD
 
 # 🖥️ Windows - Comandos y Utilidades
 
@@ -425,3 +426,5 @@ Parámetros:
 ## 📁 Carpeta MediaFire
 
 (Pendiente de agregar información.)
+=======
+>>>>>>> 03f2cba873ff3ed609e685914fc44d64052c8362
