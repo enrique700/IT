@@ -93,3 +93,335 @@ Se ejecuta este comando con powershell con administrator
 & ([scriptblock]::Create((irm "https://debloat.raphi.re/"))) 
 
 Para mas detalles: https://github.com/Raphire/Win11Debloat   
+
+# 🖥️ Windows - Comandos y Utilidades
+
+---
+
+# 💻 Comandos útiles para instalar aplicaciones con Winget
+
+## 🔄 Actualizar todas las aplicaciones de Windows
+> Ejecutar en **PowerShell**
+
+Busca y actualiza todos los programas instalados mediante Winget.
+
+```powershell
+winget upgrade --all
+```
+
+---
+
+## 📦 Instalar varios programas con Winget
+
+Herramienta para instalar múltiples programas de una sola vez.
+
+```powershell
+iwr -useb https://christitus.com/win | iex
+```
+
+---
+
+## ⚙️ Instalar Winget (si Windows aún no lo tiene)
+
+Ejecutar en **PowerShell como Administrador**.
+
+```powershell
+$progressPreference = 'silentlyContinue'
+Write-Host "Installing WinGet PowerShell module from PSGallery..."
+Install-PackageProvider -Name NuGet -Force | Out-Null
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
+Write-Host "Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet..."
+Repair-WinGetPackageManager -AllUsers
+Write-Host "Done."
+```
+
+---
+
+# 👤 Usuarios
+
+## Crear un usuario local
+
+Este ejemplo crea un usuario llamado **Usuario** con contraseña **CRD**.
+
+```cmd
+net user Usuario CRD /add
+```
+
+---
+
+## 🔐 Quitar expiración de contraseña
+
+Abrir **PowerShell como Administrador**.
+
+Sustituir **usuario** por el nombre de la cuenta.
+
+```powershell
+Set-LocalUser -Name "usuario" -PasswordNeverExpires $true
+```
+
+---
+
+# 🪟 Activación de Windows y Office
+
+## Descargar imágenes oficiales
+
+https://massgrave.dev/genuine-installation-media
+
+## Activación
+
+Abrir **PowerShell (NO CMD)** como Administrador.
+
+Copiar y pegar:
+
+```powershell
+irm https://get.activated.win | iex
+```
+
+Opciones:
+
+- **1** → HWID (Windows)
+- **2** → Ohook (Office)
+
+---
+
+# 🖨️ Reparación de impresión y escáner
+
+## Reiniciar cola de impresión
+
+```cmd
+net stop spooler && net start spooler
+```
+
+---
+
+## Reiniciar servicio de escaneo (STI)
+
+```cmd
+net stop stisvc && net start stisvc
+```
+
+---
+
+## Reiniciar Device Association Service
+
+```cmd
+net stop DeviceAssociationService && net start DeviceAssociationService
+```
+
+---
+
+## Reiniciar cola de impresión y limpiar trabajos pendientes
+
+```cmd
+net stop spooler && del %systemroot%\System32\spool\printers\* /Q /F /S && net start spooler
+```
+
+---
+
+## Abrir el panel clásico de impresoras
+
+```cmd
+shell:::{A8A91A66-3A7D-4424-8D24-04E180695C7A}
+```
+
+---
+
+# 🧰 Reparación de Windows
+
+## Reparar archivos del sistema
+
+```cmd
+sfc /scannow
+```
+
+---
+
+## Revisar la integridad de la imagen de Windows
+
+Ejecutar **en este orden**:
+
+```cmd
+DISM /Online /Cleanup-Image /CheckHealth
+```
+
+```cmd
+DISM /Online /Cleanup-Image /ScanHealth
+```
+
+```cmd
+DISM /Online /Cleanup-Image /RestoreHealth
+```
+
+---
+
+# 🧹 Limpiar historial del cuadro Ejecutar
+
+```cmd
+reg delete "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" /f
+```
+
+---
+
+# ⌨️ Forzar un solo idioma de teclado
+
+Para evitar tener múltiples distribuciones de teclado.
+
+1. Abrir **CMD como Administrador**.
+
+2. Ejecutar:
+
+```powershell
+Set-WinUserLanguageList en-US -Force
+```
+
+3. Cerrar sesión y volver a iniciar.
+
+---
+
+# 🧨 Debloat de Windows (EN PRUEBAS)
+
+**⚠️ Cuidado:** puede eliminar componentes importantes del sistema.
+
+Ejecutar en **PowerShell como Administrador**.
+
+```powershell
+& ([scriptblock]::Create((irm "https://debloat.raphi.re/")))
+```
+
+Más información:
+
+https://github.com/Raphire/Win11Debloat
+
+---
+
+# 🎯 Crear un acceso directo para hacer Ping
+
+Crear un acceso directo con:
+
+```text
+C:\Windows\System32\cmd.exe /k "ping NOMBRE_MAQUINA -t"
+```
+
+Pasos:
+
+1. Clic derecho en el Escritorio.
+2. Nuevo → Acceso directo.
+3. Pegar la ruta anterior.
+4. Elegir un nombre.
+5. Finalizar.
+
+Al abrirlo se ejecutará automáticamente el ping y la ventana permanecerá abierta.
+
+---
+
+# 🖥️ Preparar Windows para clonación
+
+## Limpiar archivos temporales
+
+```cmd
+cleanmgr
+```
+
+---
+
+## Ejecutar Sysprep (si es posible)
+
+```text
+C:\Windows\System32\Sysprep\sysprep.exe
+```
+
+---
+
+## Cambiar el nombre del equipo
+
+PowerShell:
+
+```powershell
+Rename-Computer -NewName "NUEVO-NOMBRE" -Restart
+```
+
+---
+
+## Desactivar BitLocker
+
+Panel de control
+
+→ Sistema y seguridad
+
+→ Cifrado de unidad BitLocker
+
+→ Desactivar BitLocker
+
+---
+
+## Ver estado de BitLocker
+
+```cmd
+manage-bde -status
+```
+
+---
+
+# ⏰ Reinicio programado
+
+## Crear reinicio semanal
+
+Domingos a las **03:00 AM**
+
+```cmd
+schtasks /create /tn "ReinicioSemanal" /tr "shutdown.exe /r /f /t 0" /sc weekly /d SUN /st 03:00 /ru SYSTEM
+```
+
+---
+
+## Verificar la tarea
+
+```cmd
+schtasks /query /tn "ReinicioSemanal" /v /fo list
+```
+
+---
+
+## Eliminar la tarea
+
+```cmd
+schtasks /delete /tn "ReinicioSemanal" /f
+```
+
+---
+
+## Información
+
+Para cambiar la frecuencia:
+
+- `/sc daily` → Diario
+- `/sc weekly` → Semanal
+- `/sc month` → Mensual
+
+Parámetros:
+
+- `/r` → Reiniciar
+- `/f` → Forzar cierre de aplicaciones
+- `/t 0` → Sin tiempo de espera
+
+---
+
+## Días de la semana
+
+| Día | Valor |
+|------|-------|
+| Domingo | SUN |
+| Lunes | MON |
+| Martes | TUE |
+| Miércoles | WED |
+| Jueves | THU |
+| Viernes | FRI |
+| Sábado | SAT |
+
+---
+
+# 📁 Carpetas
+
+## 📁 Carpeta MediaFire
+
+(Pendiente de agregar información.)
