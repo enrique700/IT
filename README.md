@@ -241,3 +241,42 @@ schtasks /delete /tn "ReinicioSemanal" /f
 | Jueves     | THU   |
 | Viernes    | FRI   |
 | Sábado     | SAT   |
+
+## 🧠 Para recordar 
+
+**Abrir Centro de redes antiguo**
+(Pegar esto en "Ejecutar/Run" Win+R) 
+
+```
+ncpa.cpl
+```
+
+**Reiniciar controlador de grafica**
+
+Presionar al mismo tiempo las siguientes teclas 
+```
+win + Ctrl + Shift + B 
+```
+
+Liberar y renovar IP (clásico para problemas de "sin internet") (visto en internet a veces ayuda) 
+
+```
+ipconfig /release && ipconfig /renew
+```
+## Saltar Poner Cuenta win11 
+
+Luego de seleccionar la region y el teclado mientras configuramos windows11, en la parte que pide agregar un teclado extra aca precionamos **Shift + F10** y nos saldra un CMD y aca tecleamos lo siguiente: 
+
+```
+start ms-cxh:localonly
+```
+
+Luego le damos a enter y ponemos los datos del usuario local que tendra la maquina y listo. 
+
+Aca un video de como hacer el proceso 
+
+
+<video controls width="100%">
+  <source src="https://docs.atlasos.net/assets/videos/win11-OOBE.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
