@@ -18,6 +18,8 @@ Referencia rápida de comandos y scripts de PowerShell/CMD para instalación de 
 - [🎯 Acceso directo de ping (CMD)](#-acceso-directo-de-ping-cmd)
 - [💿 Preparar Windows para clonación](#-preparar-windows-para-clonación)
 - [⏰ Apagado/Reinicio programado](#-apagadoreinicio-programado)
+- [🧠 Para recordar](#-para-recordar) 
+- [💻 Saltar Poner Cuenta win11 ](#-saltar-Poner-cuenta-win11)
 
 ---
 
@@ -273,10 +275,3 @@ start ms-cxh:localonly
 
 Luego le damos a enter y ponemos los datos del usuario local que tendra la maquina y listo. 
 
-Aca un video de como hacer el proceso 
-
-
-<video controls width="100%">
-  <source src="https://docs.atlasos.net/assets/videos/win11-OOBE.mp4" type="video/mp4">
-  Tu navegador no soporta la reproducción de video.
-</video>
